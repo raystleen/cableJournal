@@ -504,7 +504,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "ane JOIN ane_ports ON (ane._id = ane_ports.id_ane) " +
                 "WHERE ane.name = ? AND ane.model = ? AND ane_ports.n_port = ?",
                 args);
-        //some changes
+
         return cursor;
     }
 }
