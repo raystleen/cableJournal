@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPPActivity">
+
+    <include
+        layout="@layout/toolbar"/>
+
+    <TableRow>
+        <TextView
+            android:text="@string/name"
+            android:layout_weight="0.3"/>
+        <EditText
+            android:id="@+id/pp_name"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:maxLength="20"
+            android:hint="@string/nameHint"/>
+    </TableRow>
+
+
+
+    <TableRow>
+        <TextView
+            android:text="@string/countPorts"
+            android:layout_weight="0.3"/>
+        <EditText
+            android:id="@+id/pp_count_ports"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:maxLength="3"
+            android:inputType="numberDecimal"
+            android:hint="@string/countPortsHint"/>
+
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/save" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/back" />
+    </TableRow>
+
+</TableLayout>

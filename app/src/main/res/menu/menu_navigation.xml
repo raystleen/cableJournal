@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/navigation_addANE"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="@string/addANE" />
+
+        <item
+            android:id="@+id/navigation_addPP"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="@string/addPP" />
+    </group>
+    <group>
+        <item
+            android:id="@+id/navigation_addEquipment"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="@string/addEquipment" />
+    </group>
+    <group>
+        <item
+            android:id="@+id/navigation_equipment"
+            android:icon="@android:drawable/btn_star"
+            android:title="@string/equipment" />
+    </group>
+    <group>
+        <item
+            android:id="@+id/navigation_export"
+            android:icon="@android:drawable/ic_menu_save"
+            android:title="@string/exportExcel" />
+        <item
+            android:id="@+id/navigation_import"
+            android:icon="@android:drawable/stat_sys_download"
+            android:title="@string/importExcel" />
+    </group>
+</menu>
