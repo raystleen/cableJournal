@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 public class validator {
 
+    int a = 123;
+
     public static <T extends TextView> boolean isEmpty(Context context, T elem)
     {
         String text = elem.getText().toString();
