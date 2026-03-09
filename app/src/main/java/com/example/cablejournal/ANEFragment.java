@@ -44,26 +44,23 @@ public class ANEFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
+        //Инициализация указателей
         v = inflater.inflate(R.layout.fragment_a_n_e, container, false);
-        initPointers();
 
-        SQLiteOpenHelper dbHelper = new DBHelper(getContext());
+        listANE = v.findViewById(R.id.list_ane);
+        searchField = v.findViewById(R.id.searchField);
+        searchField.addTextChangedListener(new ANEFragment.checkChangeText());
+
+        /*SQLiteOpenHelper dbHelper = new DBHelper(getContext());
         try
         {
             db = dbHelper.getReadableDatabase();
         } catch(SQLiteException e)
         {
             Toast.makeText(getContext(), R.string.databaseUnavailable, Toast.LENGTH_SHORT).show();
-        }
+        }*/
 
         return v;
-    }
-
-    private void initPointers()
-    {
-        listANE = v.findViewById(R.id.list_ane);
-        searchField = v.findViewById(R.id.searchField);
-        searchField.addTextChangedListener(new ANEFragment.checkChangeText());
     }
 
     class checkChangeText implements TextWatcher
@@ -85,10 +82,10 @@ public class ANEFragment extends Fragment {
     {
         super.onResume();
 
-        searchField.setText("");
+        /*searchField.setText("");
 
         DBHelper.recalculateCountOfPorts(db, DBHelper.table_ane);
-        loadListOfANE();
+        loadListOfANE();*/
     }
 
     private void loadListOfANE()
@@ -98,7 +95,7 @@ public class ANEFragment extends Fragment {
 
     private void loadListOfANE(String name)
     {
-        cursor = DBHelper.selectFromTable(db, DBHelper.table_ane, "name LIKE ? OR model LIKE ?", new String[] {"%" + name + "%", "%" + name + "%"});
+        /*cursor = DBHelper.selectFromTable(db, DBHelper.table_ane, "name LIKE ? OR model LIKE ?", new String[] {"%" + name + "%", "%" + name + "%"});
 
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(getContext(),
                 R.layout.item_ane_list,
@@ -109,13 +106,13 @@ public class ANEFragment extends Fragment {
         listANE.setAdapter(listAdapter);
 
         registerForContextMenu(listANE);
-        listANE.setOnItemClickListener((adapterView, view, position, id) -> editItem(position, id));
+        listANE.setOnItemClickListener((adapterView, view, position, id) -> editItem(position, id));*/
     }
 
     @SuppressLint("Range")
     private void editItem (int position, long id_item)
     {
-        //Взятие имени активного оборудования из курсора БД
+        /*//Взятие имени активного оборудования из курсора БД
         cursor.moveToPosition(position);
         String ane_name;
         ane_name = cursor.getString(cursor.getColumnIndex("name"));
@@ -124,7 +121,7 @@ public class ANEFragment extends Fragment {
         Intent intent = new Intent(getContext(), ANEPortsActivity.class);
         intent.putExtra(ANEPortsActivity.EXTRA_ANE_ID, id_item);
         intent.putExtra(ANEPortsActivity.EXTRA_ANE_NAME, ane_name);
-        startActivity(intent);
+        startActivity(intent);*/
     }
 
     @Override
@@ -162,7 +159,7 @@ public class ANEFragment extends Fragment {
     }
 
     private void deleteItem(long id_item) {
-        AlertDialog.Builder builderDialog = new AlertDialog.Builder(getContext());
+        /*AlertDialog.Builder builderDialog = new AlertDialog.Builder(getContext());
         builderDialog.setTitle(R.string.check);
         builderDialog.setMessage(R.string.areYouSure);
         builderDialog.setPositiveButton(R.string.yes,
@@ -181,7 +178,7 @@ public class ANEFragment extends Fragment {
                 (dialogInterface, i) -> {
 
                 });
-        builderDialog.show();
+        builderDialog.show();*/
     }
 
     @Override

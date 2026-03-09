@@ -48,14 +48,14 @@ public class PPFragment extends Fragment {
         searchField.addTextChangedListener(new checkChangeText());  //при изменении - выполнить поиск
 
         
-        SQLiteOpenHelper DBHelper = new DBHelper(getContext());
+        /*SQLiteOpenHelper DBHelper = new DBHelper(getContext());
         try
         {
             db = DBHelper.getReadableDatabase();
         } catch(SQLiteException e)
         {
             Toast.makeText(getContext(), R.string.databaseUnavailable, Toast.LENGTH_SHORT).show();
-        }
+        }*/
 
         return view;
     }
@@ -70,7 +70,7 @@ public class PPFragment extends Fragment {
 
         @Override
         public void afterTextChanged(Editable editable) {
-            showListOfPP(searchField.getText().toString());
+            //showListOfPP(searchField.getText().toString());
         }
     }
 
@@ -83,11 +83,11 @@ public class PPFragment extends Fragment {
         searchField.setText("");
 
         //пересчет свободных портов и вывод списка патч-панелей
-        DBHelper.recalculateCountOfPorts(db, DBHelper.table_pp);
-        showListOfPP();
+        /*DBHelper.recalculateCountOfPorts(db, DBHelper.table_pp);
+        showListOfPP();*/
     }
 
-    private void showListOfPP(String name)
+    /*private void showListOfPP(String name)
     {
         listPP = getView().findViewById(R.id.list_pp);
 
@@ -109,12 +109,12 @@ public class PPFragment extends Fragment {
         //Обработчик нажатия на списке и контектсное меню
         listPP.setOnItemClickListener((adapterView, view, position, id) -> editPorts(position, id));
         registerForContextMenu(listPP);
-    }
+    }*/
 
-    private void showListOfPP()
+    /*private void showListOfPP()
     {
         showListOfPP("");
-    }
+    }*/
 
     @Override
     public void onCreateContextMenu (@NonNull ContextMenu menu, @NonNull View view, ContextMenu.ContextMenuInfo menuInfo)
@@ -149,14 +149,14 @@ public class PPFragment extends Fragment {
     private void editPorts (int position, long id)
     {
         //Взятие имени патч-панели из курсора БД
-        cursor.moveToPosition(position);
+        /*cursor.moveToPosition(position);
         @SuppressLint("Range") String pp_name = cursor.getString(cursor.getColumnIndex("name"));
 
         // Интент для вызова активити с портами патч-панели
         Intent intent = new Intent(getContext(), PPPortsActivity.class);
         intent.putExtra(PPPortsActivity.EXTRA_PP_ID, id);            //id_pp
         intent.putExtra(PPPortsActivity.EXTRA_PP_NAME, pp_name);    //pp_name
-        startActivity(intent);
+        startActivity(intent);*/
     }
 
     /*TODO реализовать редактирование самой патч-панели*/
@@ -167,7 +167,7 @@ public class PPFragment extends Fragment {
 
     private void deleteItem(long idItem)
     {
-        AlertDialog.Builder builderDialog = new AlertDialog.Builder(requireContext());
+        /*AlertDialog.Builder builderDialog = new AlertDialog.Builder(requireContext());
         builderDialog.setTitle(R.string.check);
         builderDialog.setMessage(R.string.areYouSure);
         builderDialog.setPositiveButton(R.string.yes,
@@ -182,7 +182,7 @@ public class PPFragment extends Fragment {
                 });
         builderDialog.setNegativeButton(R.string.no,
                 (dialogInterface, i) -> {});
-        builderDialog.show();
+        builderDialog.show();*/
     }
 
     @Override

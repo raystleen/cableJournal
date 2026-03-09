@@ -7,7 +7,7 @@
     <!-- Вкладки -->
     <string name="ane">Активное сетевое оборудование</string>
     <string name="pp">Патч-панель</string>
-    <string name="someTab">Временная вкладка</string>
+    <string name="mainTab">Главная</string>
 
     <!-- Выезжающее меню-->
     <string name="openDrawer">Открыть навигационную шторку</string>

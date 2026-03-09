@@ -10,7 +10,7 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
 
     //Список имен вкладок
     public static int[] tabs = new int[]{
-            R.string.someTab,
+            R.string.mainTab,
             R.string.pp,
             R.string.ane
     };

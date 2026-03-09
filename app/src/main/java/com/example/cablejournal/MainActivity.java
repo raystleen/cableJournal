@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity
         Intent intent = null;
 
         //Добавление активного оборудования
-        if (id == R.id.navigation_addANE) {
+        /*if (id == R.id.navigation_addANE) {
             intent = new Intent(this, AddANEActivity.class);
         //Добавление патч-панели
         } else if (id == R.id.navigation_addPP) {
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.navigation_import) {
             intent = new Intent(this, ImportExcelActivity.class);
         }
-        startActivity(intent);
+        startActivity(intent);*/
 
         //Спрятать шторку
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
